@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Button } from "antd";
 import { ArrowRightOutlined, PlayCircleOutlined } from "@ant-design/icons";
 import { FaCode, FaRocket, FaBrain, FaShieldAlt } from "react-icons/fa";
+import webImage1 from "../../assets/projects_img/p2.png";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -86,7 +88,9 @@ const HeroSection = () => {
               top: `${(i * 20) % 60}%`,
             }}
           >
-            {`<code>${["div", "const", "function", "return", "import", "export"][i]}</code>`}
+            {`<code>${
+              ["div", "const", "function", "return", "import", "export"][i]
+            }</code>`}
           </motion.div>
         ))}
 
@@ -111,7 +115,9 @@ const HeroSection = () => {
               }}
               className={`absolute ${item.position} text-secondary/30`}
               style={{
-                transform: `translate(${mousePosition.x * (index + 1) * 0.1}px, ${mousePosition.y * (index + 1) * 0.1}px)`,
+                transform: `translate(${
+                  mousePosition.x * (index + 1) * 0.1
+                }px, ${mousePosition.y * (index + 1) * 0.1}px)`,
               }}
             >
               <Icon className="text-4xl md:text-6xl" />
@@ -167,8 +173,8 @@ const HeroSection = () => {
               className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl"
             >
               We craft cutting-edge software solutions that drive innovation,
-              boost productivity, and transform businesses. From web applications
-              to mobile apps, we bring your ideas to life.
+              boost productivity, and transform businesses. From web
+              applications to mobile apps, we bring your ideas to life.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -246,17 +252,21 @@ const HeroSection = () => {
               {/* Main Card */}
               <div className="relative bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-gray-200">
                 {/* Code Preview */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2 mb-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2 mb-0">
                     <div className="w-3 h-3 rounded-full bg-red-500"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span className="ml-4 text-sm text-gray-500 font-mono">
-                      app.jsx
+                    <span className="bg-slate-100 p-1 w-[90%] text-start px-2 rounded ml-4 text-sm text-gray-500 font-mono">
+                      https://helixarchitech.com
                     </span>
                   </div>
-
-                  <div className="space-y-2 font-mono text-sm">
+                  <div className="rounded-lg overflow-hidden">
+                    <Link to="https://helixarchitech.com" target="_blank">
+                      <img src={webImage1} className="" alt="" />
+                    </Link>
+                  </div>
+                  {/* <div className="space-y-2 font-mono text-sm">
                     <div className="flex items-center gap-2">
                       <span className="text-purple-600">import</span>
                       <span className="text-gray-700">React</span>
@@ -282,7 +292,7 @@ const HeroSection = () => {
                     <div className="ml-8 text-gray-700">)</div>
                     <div className="ml-4 text-gray-400">{"}"}</div>
                     <div className="text-gray-400">{"}"}</div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Floating Elements */}
